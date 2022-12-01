@@ -24,12 +24,33 @@ body {
 .header-box {
   font-family: future;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #eee;
 }
 
 .header-title {
   font-size: 50px;
-  color: #eee;
   padding: 10px 30px;
+  text-align: center;
+}
+
+.header-text {
+  font-size: 20px;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+.speed {
+  color: blue;
+}
+
+.resistance {
+  color: green;
+}
+
+.strength {
+  color: red;
 }
 
 .game-box {
