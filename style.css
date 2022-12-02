@@ -10,7 +10,6 @@
 }
 
 body {
-  font-family: sans-serif;
   background-image: url(./img/background.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -19,10 +18,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  font-family: future;
 }
 
 .header-box {
-  font-family: future;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,22 +54,70 @@ body {
 
 .game-box {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   color: white;
-  gap: 500px;
+  width: 800px;
+  gap: 50px;
 }
 
 .player-box {
-  border: 1px solid black;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.player-box-title {
+  text-align: center;
+  border-bottom: 5px solid black;
+  padding: 10px 30px;
+  background-color: rgb(27, 26, 26);
+  text-shadow: 5px 5px black;
+}
+
+.chooses-box {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 30px;
 }
 
 .computer-box {
-  border: 1px solid black;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.computer-box-title {
+  text-align: center;
+  padding: 10px 30px;
+  border-bottom: 5px solid black;
+  background-color: rgb(27, 26, 26);
+  text-shadow: 5px 5px black;
+}
+
+.computer-info {
+  display: flex;
+}
+
+.computer-choose {
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 5px solid black;
+}
+
+.round-infos {
+  padding: 10px 30px;
+  text-shadow: 5px 5px black;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 footer {
   color: #eee;
   padding: 10px 30px;
+  text-shadow: 5px 5px black;
 }
 
 a:link,
@@ -83,4 +130,8 @@ a:hover,
 a:active {
   text-decoration: underline;
   color: #051883;
+}
+
+img:hover {
+  cursor: pointer;
 }
