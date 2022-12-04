@@ -138,8 +138,12 @@ a:active {
   color: #051883;
 }
 
+button {
+  background-color: transparent;
+  border-style: none;
+}
+
 img:hover {
   cursor: pointer;
-  background-color: rgb(27, 26, 26);
-  border: 5px solid black;
+  border: 10px solid transparent;
 }
