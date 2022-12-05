@@ -21,7 +21,7 @@
       <div class="player-box">
         <p class="player-box-title">Player (You)</p>
         <div class="chooses-box">
-          <button class="speed-button">
+          <button class="choice speed-button">
             <img
               src="img/speed.png"
               alt="blue spaceship"
@@ -29,7 +29,7 @@
               height="150px"
             />
           </button>
-          <button class="resistance-button">
+          <button class="choice resistance-button">
             <img
               src="img/resistance.png"
               alt="green spaceship"
@@ -37,7 +37,7 @@
               height="150px"
             />
           </button>
-          <button class="strength-button">
+          <button class="choice strength-button">
             <img
               src="img/strength.png"
               alt="red spaceship"
@@ -61,9 +61,12 @@
             />
           </div>
           <div class="round-infos">
-            <p>Rounds: 0</p>
-            <p>Your Lives: 5 | Invader Lives: 5</p>
-            <p>Combat Info: Empty</p>
+            <p class="round">Rounds: 0</p>
+            <p>
+              <span class="player">Your Score: 0</span> |
+              <span class="computer">Invader Score: 0</span>
+            </p>
+            <p class="combat">Combat Info: Empty</p>
           </div>
         </div>
       </div>
@@ -74,5 +77,6 @@
         <a href="https://github.com/marcosvinalves">MarcosVinAlves</a>
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
