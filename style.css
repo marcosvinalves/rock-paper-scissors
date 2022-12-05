@@ -19,6 +19,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-family: future;
+  overflow: hidden;
 }
 
 .header-box {
@@ -102,8 +103,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   text-shadow: 5px 5px black;
   border-right: 5px solid black;
+}
+
+.invader-img {
+  margin-top: 20px;
 }
 
 .invader-img:hover {
