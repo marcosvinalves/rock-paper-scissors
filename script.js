@@ -59,7 +59,6 @@ function countScore(playerSelection, computerSelection) {
     (computerSelection === "resistance" && playerSelection === "speed") ||
     (computerSelection === "strength" && playerSelection === "resistance")
   ) {
-    toRed();
     const computerBox = document.querySelector(".computer-box");
     computerBox.style.borderColor = "red";
     combatInfo.textContent = `You got beat! Soldier Down!`;
