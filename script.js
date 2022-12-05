@@ -39,6 +39,8 @@ function countRound() {
 
 //COUNT SCORE AND COMBAT INFO
 function countScore(playerSelection, computerSelection) {
+  const computerBox = document.querySelector(".computer-box");
+  computerBox.style.borderColor = "black";
   if (playerSelection === computerSelection) {
     combatInfo.textContent = `
     Ouch! Both destroyed. Round tied.`;
@@ -47,6 +49,8 @@ function countScore(playerSelection, computerSelection) {
     (playerSelection === "resistance" && computerSelection === "speed") ||
     (playerSelection === "strength" && computerSelection === "resistance")
   ) {
+    const computerBox = document.querySelector(".computer-box");
+    computerBox.style.borderColor = "green";
     combatInfo.textContent = `Yeahh! Invader down. Nice job!`;
     playerScore++;
     playerInfo.textContent = `Your Score: ${playerScore}`;
@@ -55,6 +59,9 @@ function countScore(playerSelection, computerSelection) {
     (computerSelection === "resistance" && playerSelection === "speed") ||
     (computerSelection === "strength" && playerSelection === "resistance")
   ) {
+    toRed();
+    const computerBox = document.querySelector(".computer-box");
+    computerBox.style.borderColor = "red";
     combatInfo.textContent = `You got beat! Soldier Down!`;
     computerScore++;
     computerInfo.textContent = `Invader Score: ${computerScore}`;
