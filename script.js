@@ -3,7 +3,8 @@ const combatInfo = document.querySelector(".combat");
 const playerInfo = document.querySelector(".player");
 const computerInfo = document.querySelector(".computer");
 const roundInfo = document.querySelector(".round");
-invaderImg = document.querySelector(".invader-img");
+const choicesBox = document.querySelector(".chooses-box");
+const invaderImg = document.querySelector(".invader-img");
 
 //VARIABLES
 let round = 0;
@@ -39,13 +40,14 @@ function countRound() {
 //COUNT SCORE AND COMBAT INFO
 function countScore(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    combatInfo.textContent = `Combat Info: Draw!`;
+    combatInfo.textContent = `
+    Ouch! Both destroyed. Round tied.`;
   } else if (
     (playerSelection === "speed" && computerSelection === "strength") ||
     (playerSelection === "resistance" && computerSelection === "speed") ||
     (playerSelection === "strength" && computerSelection === "resistance")
   ) {
-    combatInfo.textContent = `Combat Info: Win!`;
+    combatInfo.textContent = `Yeahh! Invader down. Nice job!`;
     playerScore++;
     playerInfo.textContent = `Your Score: ${playerScore}`;
   } else if (
@@ -53,11 +55,31 @@ function countScore(playerSelection, computerSelection) {
     (computerSelection === "resistance" && playerSelection === "speed") ||
     (computerSelection === "strength" && playerSelection === "resistance")
   ) {
-    combatInfo.textContent = `Combat Info: Lost!`;
+    combatInfo.textContent = `You got beat! Soldier Down!`;
     computerScore++;
     computerInfo.textContent = `Invader Score: ${computerScore}`;
   }
   return [computerScore, playerScore];
+}
+
+//END GAMING
+function endGame() {
+  if (playerScore === 5 || computerScore === 5) {
+    getSpeedChoice = document
+      .querySelector(".speed-button")
+      .setAttribute("disabled", "");
+    getResistanceChoice = document
+      .querySelector(".resistance-button")
+      .setAttribute("disabled", "");
+    getStrengthChoice = document
+      .querySelector(".strength-button")
+      .setAttribute("disabled", "");
+    if (playerScore > computerScore) {
+      combatInfo.textContent = "Invader defeated. Earth is safe.";
+    } else {
+      combatInfo.textContent = "Defeated. Earth invaded.";
+    }
+  }
 }
 
 function playGame() {
@@ -69,6 +91,7 @@ function playGame() {
       getComputerChoice();
       countRound();
       countScore(playerSelection, computerSelection);
+      endGame();
     });
   getResistanceChoice = document
     .querySelector(".resistance-button")
@@ -77,6 +100,7 @@ function playGame() {
       getComputerChoice();
       countRound();
       countScore(playerSelection, computerSelection);
+      endGame();
     });
   getStrengthChoice = document
     .querySelector(".strength-button")
@@ -85,6 +109,7 @@ function playGame() {
       getComputerChoice();
       countRound();
       countScore(playerSelection, computerSelection);
+      endGame();
     });
 }
 playGame();
