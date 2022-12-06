@@ -33,7 +33,7 @@ function getComputerChoice() {
 //COUNT ROUND
 function countRound() {
   round++;
-  roundInfo.textContent = `Round: ${round}`;
+  roundInfo.textContent = `Rounds: ${round}`;
   return round;
 }
 
@@ -85,9 +85,37 @@ function endGame() {
     } else {
       combatInfo.textContent = "Defeated. Earth invaded.";
     }
+    resetGame();
   }
 }
 
+function resetGame() {
+  const resetButton = document.querySelector(".reset-button");
+  resetButton.style.visibility = "visible";
+  resetButton.addEventListener("click", () => {
+    playerScore = 0;
+    computerScore = 0;
+    round = 0;
+    invaderImg.src = "img/questionmark.png";
+    combatInfo.textContent = "Combat Info: Empty";
+    roundInfo.textContent = "Rounds: 0";
+    computerInfo.textContent = `Invader Score: ${computerScore}`;
+    playerInfo.textContent = `Your Score: ${playerScore}`;
+    roundInfo.textContent = `Rounds: ${round}`;
+    const computerBox = document.querySelector(".computer-box");
+    computerBox.style.borderColor = "black";
+    getSpeedChoice = document.querySelector(".speed-button").disabled = false;
+    getResistanceChoice = document.querySelector(
+      ".resistance-button"
+    ).disabled = false;
+    getStrengthChoice = document.querySelector(
+      ".strength-button"
+    ).disabled = false;
+    resetButton.style.visibility = "hidden";
+  });
+}
+
+//FUNCTION TO PLAY A SINGLE ROUND
 function playGame() {
   let playerSelection;
   getSpeedChoice = document
